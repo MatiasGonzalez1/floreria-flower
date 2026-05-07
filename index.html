@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florería Flower | Arreglos Florales Premium en Posadas · 40+ Años</title>
+    <meta name="description" content="Florería Flower en Posadas, Misiones. Más de 40 años creando arreglos florales de lujo. Ramos personalizados, eventos, envíos a domicilio. Pedí ahora por WhatsApp.">
+    <meta name="keywords" content="florería Posadas, flores Posadas, arreglos florales Misiones, ramos personalizados, eventos florales, Florería Flower, envío flores Posadas">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+    'marfil': '#F9F4EE',
+    'gris-calido': '#E9E3DD',
+    'rosa-viejo': '#D16F8B',   // rosa más vibrante y cálido
+    'verde-salvia': '#7A9A74', // verde con más vida
+    'borgona': '#8C3353',      // burdeos elegante y profundo
+    'texto': '#2C2A28',
+    'texto-suave': '#6C605A',
+},
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        html { scroll-behavior: smooth; }
+        
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #F8F5F0; }
+        ::-webkit-scrollbar-thumb { background: #CFA5A5; border-radius: 3px; }
+        
+        .fade-up {
+            opacity: 0; transform: translateY(40px);
+            transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        
+        .fade-in {
+            opacity: 0; transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in.visible { opacity: 1; }
+        
+        .hero-image { animation: subtleZoom 20s ease-in-out infinite alternate; }
+        @keyframes subtleZoom {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+        
+        .masonry-grid { column-count: 3; column-gap: 1rem; }
+        @media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
+        @media (max-width: 640px) { .masonry-grid { column-count: 1; } }
+        .masonry-item { break-inside: avoid; margin-bottom: 1rem; }
+        
+        .gallery-item { overflow: hidden; }
+        .gallery-item img { transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.08); }
+        
+        .btn-primary {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative; overflow: hidden;
+        }
+        .btn-primary::after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+            opacity: 0; transition: opacity 0.3s;
+        }
+        .btn-primary:hover::after { opacity: 1; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(125, 76, 87, 0.3); }
+        
+        .service-card { transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        .service-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(45, 45, 45, 0.08); }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+        .whatsapp-pulse::before {
+            content: ''; position: absolute; inset: -4px;
+            border-radius: 50%; background: #25D366;
+            animation: pulse-ring 2s ease-out infinite; z-index: -1;
+        }
+        
+        .elegant-line {
+            width: 60px; height: 1px; background: #CFA5A5;
+            transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .elegant-line.expanded { width: 100px; }
+        
+        .nav-blur { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        
+        .testimonial-card { transition: all 0.5s ease; }
+        .testimonial-card:hover { background: #FFFFFF; box-shadow: 0 16px 48px rgba(45, 45, 45, 0.06); }
+        
+        .occasion-tag { transition: all 0.3s ease; cursor: pointer; }
+        .occasion-tag:hover { background: #7D4C57; color: white; border-color: #7D4C57; }
+        
+        .urgency-banner {
+            animation: slideDown 0.6s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #7D4C57 0%, #CFA5A5 100%);
+        }
+        
+        .social-proof-bar {
+            animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .sticky-cta {
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .sticky-cta.visible { transform: translateY(0); }
+        
+        .count-up {
+            font-variant-numeric: tabular-nums;
+        }
+    </style>
+</head>
+<body class="font-sans text-texto bg-white antialiased selection:bg-rosa-viejo selection:text-white">
+
+    <!-- Urgency Banner — FIXED TOP -->
+    <div id="urgency-banner" class="fixed top-0 left-0 right-0 z-[60] bg-borgona text-white py-2.5 px-4 text-center transition-transform duration-300">
+        <p class="text-sm font-medium tracking-wide">
+            <span class="inline-flex items-center gap-2">
+                <i data-lucide="truck" class="w-4 h-4"></i>
+                Envíos a domicilio en Posadas · Pedí ahora y recibí hoy
+            </span>
+            <span class="hidden sm:inline mx-3 text-white/40">|</span>
+            <span class="hidden sm:inline text-white/80">WhatsApp: +54 9 376 493-0014</span>
+        </p>
+    </div>
+
+    <!-- Navigation — FIXED debajo del banner -->
+    <nav id="navbar" class="fixed top-[42px] left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex items-center justify-between h-20 lg:h-24">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-full bg-borgona flex items-center justify-center">
+                        <i data-lucide="flower-2" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="font-serif text-xl lg:text-2xl font-semibold tracking-wide text-texto group-hover:text-borgona transition-colors">Flower</span>
+                        <span class="text-[10px] uppercase tracking-[0.3em] text-texto-suave -mt-1">Florería</span>
+                    </div>
+                </a>
+                
+                <div class="hidden lg:flex items-center gap-10">
+                    <a href="#historia" class="text-sm tracking-wide text-texto-suave hover:text-borgona transition-colors">Historia</a>
+                    <a href="#servicios" class="text-sm tracking-wide text-texto-suave hover:text-borgona transition-colors">Servicios</a>
+                    <a href="#galeria" class="text-sm tracking-wide text-texto-suave hover:text-borgona transition-colors">Galería</a>
+                    <a href="#testimonios" class="text-sm tracking-wide text-texto-suave hover:text-borgona transition-colors">Opiniones</a>
+                    <a href="#contacto" class="text-sm tracking-wide text-texto-suave hover:text-borgona transition-colors">Contacto</a>
+                </div>
+                
+                <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                   target="_blank"
+                   class="hidden lg:flex items-center gap-2 bg-borgona text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all hover:shadow-lg">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                    Pedir Ahora
+                </a>
+                
+                <button id="mobile-menu-btn" class="lg:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6 text-texto"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="lg:hidden hidden bg-white/95 nav-blur border-t border-gris-calido">
+            <div class="px-6 py-8 space-y-6">
+                <a href="#historia" class="block text-lg font-serif text-texto hover:text-borgona">Historia</a>
+                <a href="#servicios" class="block text-lg font-serif text-texto hover:text-borgona">Servicios</a>
+                <a href="#galeria" class="block text-lg font-serif text-texto hover:text-borgona">Galería</a>
+                <a href="#testimonios" class="block text-lg font-serif text-texto hover:text-borgona">Opiniones</a>
+                <a href="#contacto" class="block text-lg font-serif text-texto hover:text-borgona">Contacto</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                   target="_blank"
+                   class="flex items-center justify-center gap-2 bg-borgona text-white px-6 py-4 rounded-full text-sm font-semibold mt-4">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Pedir por WhatsApp Ahora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Spacer para compensar el header fijo (banner + navbar) -->
+    <div class="h-[106px] lg:h-[118px]"></div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-marfil pt-16">
+        <div class="absolute inset-0 lg:left-[45%]">
+            <div class="relative w-full h-full">
+                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ee9?w=1200&q=80" 
+                     alt="Arreglo floral elegante premium" 
+                     class="hero-image w-full h-full object-cover opacity-90">
+                <div class="absolute inset-0 bg-gradient-to-r from-marfil via-marfil/80 to-transparent lg:from-marfil lg:via-marfil/60 lg:to-transparent"></div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pt-32 pb-20 lg:pt-0 lg:pb-0">
+            <div class="max-w-2xl">
+                <div class="fade-up inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-gris-calido">
+                    <span class="w-2 h-2 rounded-full bg-verde-salvia animate-pulse"></span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-texto-suave">Atención Inmediata por WhatsApp</span>
+                </div>
+                
+                <h1 class="fade-up font-serif text-5xl lg:text-7xl xl:text-8xl font-light leading-[1.1] text-texto mb-6" style="transition-delay: 0.1s;">
+                    Arreglos florales<br>
+                    <span class="italic font-normal text-borgona">de excelencia,</span><br>
+                    entregados con<br>
+                    <span class="italic font-normal">puntualidad</span>
+                </h1>
+                
+                <p class="fade-up text-lg lg:text-xl text-texto-suave leading-relaxed max-w-lg mb-8 font-light" style="transition-delay: 0.2s;">
+                    Más de 40 años diseñando arreglos que transmiten emociones reales. 
+                    <strong class="text-texto font-medium">Pedí ahora por WhatsApp y recibí hoy mismo en Posadas.</strong>
+                </p>
+                
+                <!-- Social Proof Bar -->
+                <div class="social-proof-bar fade-up flex items-center gap-4 mb-10 bg-white/60 backdrop-blur-sm rounded-full px-5 py-3 w-fit border border-gris-calido" style="transition-delay: 0.25s;">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-rosa-viejo border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">A</div>
+                        <div class="w-8 h-8 rounded-full bg-verde-salvia border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">M</div>
+                        <div class="w-8 h-8 rounded-full bg-borgona border-2 border-white flex items-center justify-center text-[10px] text-white font-bold">J</div>
+                        <div class="w-8 h-8 rounded-full bg-gris-calido border-2 border-white flex items-center justify-center text-[10px] text-texto font-bold">+</div>
+                    </div>
+                    <p class="text-sm text-texto-suave">
+                        <span class="font-semibold text-texto">+500 clientes</span> confiaron este mes
+                    </p>
+                </div>
+                
+                <div class="fade-up flex flex-col sm:flex-row gap-4" style="transition-delay: 0.3s;">
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                       target="_blank"
+                       class="btn-primary inline-flex items-center justify-center gap-3 bg-borgona text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Pedir por WhatsApp Ahora
+                    </a>
+                    <a href="#galeria" 
+                       class="inline-flex items-center justify-center gap-3 bg-white text-texto px-8 py-4 rounded-full text-sm font-medium tracking-wide border border-gris-calido hover:border-borgona hover:text-borgona transition-all">
+                        Ver Arreglos Disponibles
+                        <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="fade-up mt-12 flex items-center gap-8" style="transition-delay: 0.4s;">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-verde-salvia"></i>
+                        <span class="text-sm text-texto-suave">Entrega el mismo día</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-verde-salvia"></i>
+                        <span class="text-sm text-texto-suave">Garantía de frescura</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-verde-salvia"></i>
+                        <span class="text-sm text-texto-suave">Pago en destino</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="py-10 bg-white border-y border-gris-calido">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center fade-up">
+                <div class="flex flex-col items-center gap-2">
+                    <span class="font-serif text-3xl text-borgona count-up" data-target="40">0</span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-texto-suave">Años de Trayectoria</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="font-serif text-3xl text-borgona count-up" data-target="50000">0</span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-texto-suave">Pedidos Entregados</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="font-serif text-3xl text-borgona count-up" data-target="30000">0</span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-texto-suave"> Clientes Satisfechos</span>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                    <span class="font-serif text-3xl text-borgona">24<span class="text-xl">h</span></span>
+                    <span class="text-xs uppercase tracking-[0.2em] text-texto-suave">Atención por personalizada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section id="historia" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="fade-up relative">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-2xl">
+                        <img src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=800&q=80" 
+                             alt="Florería tradicional Posadas" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-48 h-48 bg-marfil rounded-2xl -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-32 h-32 border border-rosa-viejo/30 rounded-2xl -z-10"></div>
+                </div>
+                
+                <div class="fade-up" style="transition-delay: 0.2s;">
+                    <div class="elegant-line mb-8"></div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Nuestra Historia</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-8 leading-tight">
+                        Cuatro décadas<br>
+                        <span class="italic text-borgona">transformando</span><br>
+                        emociones en flores
+                    </h2>
+                    <div class="space-y-6 text-texto-suave leading-relaxed text-lg font-light">
+                        <p>
+                            Desde 1984, Florería Flower es sinónimo de excelencia floral en Posadas. No vendemos simples ramos: <strong class="text-texto">diseñamos experiencias sensoriales</strong> que perduran en la memoria de quien las recibe.
+                        </p>
+                        <p>
+                            Cada arreglo es concebido como una obra única, seleccionando las flores más frescas del mercado y combinándolas con criterio artístico. <strong class="text-texto">Nuestro compromiso es que tu gesto llegue con el impacto que merece.</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="mt-10 p-6 bg-marfil rounded-2xl border-l-4 border-borgona">
+                        <p class="font-serif text-xl italic text-texto">"La calidad no es un accidente. Es el resultado de 40 años de dedicación ininterrumpida."</p>
+                        <p class="text-sm text-texto-suave mt-3">— Sofía Bogado, Fundadora</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section with Pricing -->
+    <section id="servicios" class="py-24 lg:py-32 bg-marfil">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-20 fade-up">
+                <div class="elegant-line mx-auto mb-8"></div>
+                <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Nuestros Servicios</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-6">
+                    Soluciones florales<br>
+                    <span class="italic">para cada necesidad</span>
+                </h2>
+                <p class="text-texto-suave font-light text-lg">
+                    Desde un ramo sencillo hasta la decoración integral de tu evento. 
+                    <strong class="text-texto">Consultanos por WhatsApp y recibí presupuesto en minutos.</strong>
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.1s;">
+                    <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">DESDE $15.000</div>
+                    <div class="w-14 h-14 rounded-full bg-rosa-viejo/10 flex items-center justify-center mb-6">
+                        <i data-lucide="flower" class="w-7 h-7 text-borgona"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Ramos Personalizados</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Diseñados según tu presupuesto, preferencias y ocasión. Rosas, margaritas, lirios, orquídeas y más.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20consultar%20por%20un%20ramo%20personalizado." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Consultar precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.15s;">
+                    <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">DESDE $25.000</div>
+                    <div class="w-14 h-14 rounded-full bg-verde-salvia/10 flex items-center justify-center mb-6">
+                        <i data-lucide="sparkles" class="w-7 h-7 text-verde-salvia"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Arreglos Florales</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Composiciones en base, jarrón o caja para hogares, oficinas y recepciones. Elegancia garantizada.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20consultar%20por%20arreglos%20florales." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Consultar precio <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.2s;">
+                    <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">PRESUPUESTO</div>
+                    <div class="w-14 h-14 rounded-full bg-borgona/10 flex items-center justify-center mb-6">
+                        <i data-lucide="heart" class="w-7 h-7 text-borgona"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Eventos Premium</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Casamientos, aniversarios, 15 años y corporativos. Decoración integral con visita previa incluida.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20tengo%20un%20evento%20y%20quiero%20presupuesto%20para%20decoración%20floral." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Pedir presupuesto <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.25s;">
+                    <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">PRESUPUESTO</div>
+                    <div class="w-14 h-14 rounded-full bg-rosa-viejo/10 flex items-center justify-center mb-6">
+                        <i data-lucide="crown" class="w-7 h-7 text-borgona"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Coronas y Homenajes</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Arreglos funerarios con la solemnidad y delicadeza que el momento requiere. Entrega puntual a velorios.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20necesito%20información%20sobre%20coronas%20y%20arreglos%20funerarios." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Consultar disponibilidad <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.3s;">
+                    <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">DESDE $25.000</div>
+                    <div class="w-14 h-14 rounded-full bg-verde-salvia/10 flex items-center justify-center mb-6">
+                        <i data-lucide="leaf" class="w-7 h-7 text-verde-salvia"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Plantas y Orquídeas</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Orquídeas phalaenopsis, plantas de interior exclusivas y especies importadas. Incluye maceta decorativa.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20ver%20opciones%20de%20plantas%20y%20orquídeas." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Consultar disponibilidad <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+                
+                <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.35s;">
+                    <div class="absolute top-6 right-6 bg-verde-salvia text-white text-xs font-bold px-3 py-1 rounded-full">GRATIS</div>
+                    <div class="w-14 h-14 rounded-full bg-borgona/10 flex items-center justify-center mb-6">
+                        <i data-lucide="truck" class="w-7 h-7 text-borgona"></i>
+                    </div>
+                    <h3 class="font-serif text-2xl text-texto mb-3">Envío a Domicilio</h3>
+                    <p class="text-texto-suave leading-relaxed font-light mb-6">
+                        Entrega gratuita en Posadas centro en pedidos superiores a $30.000. Resto de la ciudad: consultar costo.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20hacer%20un%20pedido%20con%20envío%20a%20domicilio." 
+                       target="_blank" class="inline-flex items-center gap-2 text-borgona font-medium text-sm hover:gap-3 transition-all">
+                        Coordinar entrega <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mid-page CTA -->
+            <div class="mt-16 text-center fade-up">
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20hacer%20un%20pedido%20y%20necesito%20asesoramiento." 
+                   target="_blank"
+                   class="btn-primary inline-flex items-center justify-center gap-3 bg-borgona text-white px-10 py-5 rounded-full text-base font-semibold tracking-wide">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Hacé tu pedido ahora — Respondemos en minutos
+                </a>
+                <p class="text-sm text-texto-suave mt-4">Atención personalizada · Presupuesto sin compromiso · Entrega garantizada</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Occasions Section -->
+    <section class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-16 fade-up">
+                <div class="elegant-line mx-auto mb-8"></div>
+                <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Para Cada Ocasión</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-6">
+                    No hay momento que<br>
+                    <span class="italic text-borgona">no merezca flores</span>
+                </h2>
+                <p class="text-texto-suave font-light text-lg">
+                    Elegí la ocasión y te asesoramos con la opción perfecta. 
+                    <strong class="text-texto">Pedí por WhatsApp y olvidate de todo.</strong>
+                </p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 fade-up" style="transition-delay: 0.2s;">
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20un%20ramo%20para%20un%20cumpleaños." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Cumpleaños</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20un%20arreglo%20para%20un%20aniversario." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Aniversarios</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20un%20arreglo%20para%20un%20nacimiento." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Nacimientos</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20tengo%20un%20casamiento%20y%20quiero%20presupuesto%20floral." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Casamientos</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20necesito%20un%20arreglo%20para%20condolencias." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Condolencias</a>
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20un%20arreglo%20para%20una%20fecha%20especial." target="_blank" class="occasion-tag px-8 py-4 rounded-full border border-gris-calido text-texto text-sm tracking-wide">Fechas Especiales</a>
+            </div>
+            
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 mt-16 fade-up" style="transition-delay: 0.3s;">
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://imgs.search.brave.com/UAHg_n_Rps13mnCv034StPUxEwwPRAASe-wk5k7sTX8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9ibG9n/Lmludml0YWNpb25l/c21vZGVybmFzLmNv/bS93cC1jb250ZW50/L3VwbG9hZHMvMjAy/My8wNy8zLWNlbnRy/by1tZXNhLXF1aW5j/ZWFuZXJhLWRlY29y/YWNpb24tZmxvcmFs/LmpwZw" alt="Cumpleaños" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div>
+                            <span class="text-white font-serif text-xl block mb-2">Cumpleaños</span>
+                            <span class="text-white/70 text-sm">Presupuesto a medida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer lg:mt-12">
+                    <img src="https://imgs.search.brave.com/I2u6fJ9qF4xtINkKCOn1QLeyHcWw4LT54OEBPrOcfkU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jb250/ZW50LmVsbXVlYmxl/LmNvbS9tZWRpby8y/MDIyLzA1LzMxL3Jh/bW8tbm92aWFzLXBl/b25pYV9hYWEwZTNm/OF8xMDAweDEwMzIu/anBn" alt="Casamientos" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div>
+                            <span class="text-white font-serif text-xl block mb-2">Casamientos</span>
+                            <span class="text-white/70 text-sm">Presupuesto a medida</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aspect-[3/4] rounded-2xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://eventosaloe.com/wp-content/uploads/2024/03/aloebyvera-sobre-nosotros2.webp" alt="Aniversarios" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6">
+                        <div>
+                            <span class="text-white font-serif text-xl block mb-2">Aniversarios</span>
+                            <span class="text-white/70 text-sm">Presupuesto a medida</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="py-24 lg:py-32 bg-marfil">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <div class="elegant-line mb-8"></div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Diferenciales Competitivos</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-8">
+                        ¿Por qué los<br>
+                        <span class="italic text-borgona">posadeños</span> nos<br>
+                        eligen desde 1984?
+                    </h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <i data-lucide="clock" class="w-5 h-5 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-2">40+ años de experiencia real</h4>
+                                <p class="text-texto-suave font-light">No somos una florería nueva. Conocemos cada flor, cada estación, cada emoción. Esa experiencia se traduce en arreglos impecables.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <i data-lucide="user-check" class="w-5 h-5 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-2">Atención personalizada</h4>
+                                <p class="text-texto-suave font-light">Hablás directamente con un experto floral. Te asesoramos, te enviamos fotos de opciones y confirmamos cada detalle antes de enviar.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <i data-lucide="shield-check" class="w-5 h-5 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-2">Garantía de satisfacción</h4>
+                                <p class="text-texto-suave font-light">Si no estás conforme con tu arreglo, lo rehacemos sin costo. Así de seguros estamos de nuestra calidad. <strong class="text-texto">Cero riesgo para vos.</strong></p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-6 items-start">
+                            <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                                <i data-lucide="zap" class="w-5 h-5 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-2">Entrega express el mismo día</h4>
+                                <p class="text-texto-suave font-light">Pedís por la mañana, llega por la tarde. Pedís por la tarde, llega antes de las 20:30. <strong class="text-texto">Sin excusas, sin demoras.</strong></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20hacer%20mi%20primer%20pedido%20y%20aprovechar%20la%20calidad%20de%20Flower." 
+                       target="_blank"
+                       class="btn-primary inline-flex items-center gap-3 bg-borgona text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide mt-10">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Probalo hoy — Tu primer pedido te espera
+                    </a>
+                </div>
+                
+                <div class="fade-up relative" style="transition-delay: 0.2s;">
+                    <div class="aspect-square rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?w=800&q=80" 
+                             alt="Arreglo floral artesanal premium" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl p-8 shadow-xl max-w-xs hidden lg:block">
+                        <div class="flex items-center gap-1 mb-3">
+                            <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        </div>
+                        <p class="font-serif text-lg text-texto italic">"La mejor florería de Posadas. Elegancia y puntualidad en cada entrega."</p>
+                        <p class="text-sm text-texto-suave mt-3">— Cliente desde 2010</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-20 fade-up">
+                <div class="elegant-line mx-auto mb-8"></div>
+                <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Nuestro Portfolio</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-6">
+                    Esto es lo que<br>
+                    <span class="italic text-borgona">podemos hacer por vos</span>
+                </h2>
+                <p class="text-texto-suave font-light text-lg">
+                    Cada imagen es un pedido real entregado en Posadas. 
+                    <strong class="text-texto">¿Te gusta algo? Mandanos captura por WhatsApp y lo replicamos.</strong>
+                </p>
+            </div>
+            
+            <div class="masonry-grid fade-up" style="transition-delay: 0.2s;">
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=600&q=80" alt="Arreglo floral elegante" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1525310072745-f49212b5ac6d?w=600&q=80" alt="Ramo de rosas premium" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=600&q=80" alt="Centro de mesa evento" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=600&q=80" alt="Orquídeas premium" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1462275646964-a0e3c95f5c5c?w=600&q=80" alt="Arreglo boda lujo" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=600&q=80" alt="Ramo primavera" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1494972308805-463bc619d34e?w=600&q=80" alt="Flores blancas elegantes" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1523694576729-dc99e9c0f9b4?w=600&q=80" alt="Decoración evento corporativo" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+                <div class="masonry-item gallery-item rounded-xl overflow-hidden relative group cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1518882605630-8eb565f5e673?w=600&q=80" alt="Arreglo minimal moderno" class="w-full">
+                    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <span class="bg-white text-texto px-4 py-2 rounded-full text-sm font-medium">Ver más — Pedir similar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gallery CTA -->
+            <div class="mt-16 text-center fade-up">
+                <p class="text-texto-suave mb-6">¿Viste algo que te gustó? Mandanos la foto por WhatsApp y te cotizamos al instante.</p>
+                <a href="https://wa.me/5493764930014?text=Hola,%20vi%20su%20galería%20y%20quiero%20pedir%20algo%20similar." 
+                   target="_blank"
+                   class="btn-primary inline-flex items-center justify-center gap-3 bg-borgona text-white px-10 py-5 rounded-full text-base font-semibold tracking-wide">
+                    <i data-lucide="camera" class="w-5 h-5"></i>
+                    Mandar foto y pedir presupuesto
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonios" class="py-24 lg:py-32 bg-marfil">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center max-w-2xl mx-auto mb-20 fade-up">
+                <div class="elegant-line mx-auto mb-8"></div>
+                <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Clientes Reales</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-6">
+                    Lo que dicen quienes<br>
+                    <span class="italic text-borgona">ya nos eligieron</span>
+                </h2>
+                <p class="text-texto-suave font-light text-lg">
+                    Más de 15.000 pedidos entregados y una reputación construida pedido a pedido.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 fade-up" style="transition-delay: 0.2s;">
+                <div class="testimonial-card bg-white/60 rounded-2xl p-8 lg:p-10">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                    </div>
+                    <p class="font-serif text-xl text-texto italic leading-relaxed mb-6">
+                        "Excelente atención y arreglos impecables. Siempre superan mis expectativas. La calidad y el detalle son incomparables. Los recomiendo al 100%."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gris-calido flex items-center justify-center">
+                            <span class="text-sm font-medium text-texto">ML</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-texto">María L.</p>
+                            <p class="text-xs text-texto-suave">Cliente desde 2015 · 20+ pedidos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white/60 rounded-2xl p-8 lg:p-10">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                    </div>
+                    <p class="font-serif text-xl text-texto italic leading-relaxed mb-6">
+                        "La mejor florería de Posadas. He comprado en muchas y ninguna tiene la dedicación y el buen gusto de Flower. Mi familia completa los elige."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gris-calido flex items-center justify-center">
+                            <span class="text-sm font-medium text-texto">JR</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-texto">Juan R.</p>
+                            <p class="text-xs text-texto-suave">Cliente desde 2010 · 50+ pedidos</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white/60 rounded-2xl p-8 lg:p-10">
+                    <div class="flex items-center gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                        <i data-lucide="star" class="w-4 h-4 text-rosa-viejo fill-rosa-viejo"></i>
+                    </div>
+                    <p class="font-serif text-xl text-texto italic leading-relaxed mb-6">
+                        "Elegancia y puntualidad. Encargué para el cumpleaños de mi madre y fue perfecto. Las flores duraron semanas frescas. Volveré siempre."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-full bg-gris-calido flex items-center justify-center">
+                            <span class="text-sm font-medium text-texto">CP</span>
+                        </div>
+                        <div>
+                            <p class="text-sm font-medium text-texto">Carolina P.</p>
+                            <p class="text-xs text-texto-suave">Cliente desde 2018 · 15+ pedidos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial CTA -->
+            <div class="mt-16 text-center fade-up">
+                <a href="https://wa.me/5493764930014?text=Hola,%20quiero%20sumarme%20a%20sus%20clientes%20satisfechos%20con%20mi%20primer%20pedido." 
+                   target="_blank"
+                   class="btn-primary inline-flex items-center justify-center gap-3 bg-borgona text-white px-10 py-5 rounded-full text-base font-semibold tracking-wide">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Sumate vos también — Pedí ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (NEW) -->
+    <section class="py-24 lg:py-32 bg-white">
+        <div class="max-w-3xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-16 fade-up">
+                <div class="elegant-line mx-auto mb-8"></div>
+                <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Preguntas Frecuentes</span>
+                <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-6">
+                    Resolvemos tus <span class="italic text-borgona">dudas</span>
+                </h2>
+            </div>
+            
+            <div class="space-y-4 fade-up" style="transition-delay: 0.2s;">
+                <details class="group bg-marfil rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-serif text-lg text-texto list-none">
+                        <span>¿Cuánto tardan en responder por WhatsApp?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-borgona transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-texto-suave mt-4 leading-relaxed">Respondemos en minutos durante el horario de atención. Si nos escribís fuera de horario, te contestamos al abrir. Nunca quedás sin respuesta.</p>
+                </details>
+                
+                <details class="group bg-marfil rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-serif text-lg text-texto list-none">
+                        <span>¿Puedo pagar cuando recibo el arreglo?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-borgona transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-texto-suave mt-4 leading-relaxed">Sí. Aceptamos efectivo, transferencia bancaria y Mercado Pago. Podés pagar al momento de la entrega sin problema.</p>
+                </details>
+                
+                <details class="group bg-marfil rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-serif text-lg text-texto list-none">
+                        <span>¿Hacen entregas el mismo día?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-borgona transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-texto-suave mt-4 leading-relaxed">Absolutamente. Si nos escribís antes de las 18:00 hs, entregamos el mismo día en Posadas. Para zonas alejadas, coordinamos el horario.</p>
+                </details>
+                
+                <details class="group bg-marfil rounded-2xl p-6 cursor-pointer">
+                    <summary class="flex justify-between items-center font-serif text-lg text-texto list-none">
+                        <span>¿Puedo ver el arreglo antes de que lo envíen?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-borgona transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <p class="text-texto-suave mt-4 leading-relaxed">Sí. Te enviamos foto del arreglo terminado por WhatsApp antes de salir a entregar. Así confirmás que es exactamente lo que querías.</p>
+                </details>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-texto-suave mb-4">¿Te quedó alguna duda?</p>
+                <a href="https://wa.me/5493764930014?text=Hola,%20tengo%20una%20consulta%20antes%20de%20hacer%20mi%20pedido." 
+                   target="_blank"
+                   class="inline-flex items-center gap-2 text-borgona font-semibold hover:gap-3 transition-all">
+                    Escribinos por WhatsApp <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="py-24 lg:py-32 bg-borgona text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-white rounded-full translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 lg:px-12 text-center relative z-10 fade-up">
+            <span class="text-xs uppercase tracking-[0.3em] text-white/60 font-medium mb-6 block">¿Qué estás esperando?</span>
+            <h2 class="font-serif text-4xl lg:text-6xl font-light mb-8 leading-tight">
+                Tu arreglo floral<br>
+                <span class="italic">está a un mensaje de distancia</span>
+            </h2>
+            <p class="text-white/80 text-lg lg:text-xl font-light mb-10 max-w-2xl mx-auto">
+                No dejes para mañana el gesto que podés hacer hoy. 
+                Escribinos por WhatsApp, te asesoramos en minutos y entregamos cuando lo necesites.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-3 bg-white text-borgona px-10 py-5 rounded-full text-base font-bold tracking-wide hover:shadow-2xl transition-all hover:scale-105">
+                    <i data-lucide="message-circle" class="w-6 h-6"></i>
+                    Pedir por WhatsApp Ahora
+                </a>
+            </div>
+            
+            <div class="mt-10 flex flex-wrap justify-center gap-8 text-white/60 text-sm">
+                <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Respuesta inmediata</span>
+                <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Sin compromiso</span>
+                <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4"></i> Presupuesto gratis</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="fade-up">
+                    <div class="elegant-line mb-8"></div>
+                    <span class="text-xs uppercase tracking-[0.3em] text-rosa-viejo font-medium mb-4 block">Contacto Directo</span>
+                    <h2 class="font-serif text-4xl lg:text-5xl font-light text-texto mb-8">
+                        Visitá nuestro local<br>
+                        <span class="italic text-borgona">o escribinos</span>
+                    </h2>
+                    <p class="text-texto-suave leading-relaxed text-lg font-light mb-12">
+                        Estamos en el corazón de Posadas. Pasá a conocernos o contactanos directamente por WhatsApp para un pedido express.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 rounded-full bg-marfil flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-1">Dirección</h4>
+                                <p class="text-texto-suave font-light">Ayacucho 2447, Posadas<br>Misiones, Argentina</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 rounded-full bg-marfil flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-1">WhatsApp Directo</h4>
+                                <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                                   target="_blank"
+                                   class="text-borgona font-semibold hover:underline text-lg">
+                                    +54 9 376 493-0014
+                                </a>
+                                <p class="text-texto-suave text-sm mt-1">Respondemos en minutos</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="w-14 h-14 rounded-full bg-marfil flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-borgona"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-serif text-xl text-texto mb-1">Horario de Atención</h4>
+                                <p class="text-texto-suave font-light">Lunes a Sábado<br>8:00 - 20:30</p>
+                                <p class="text-verde-salvia text-sm mt-1 font-medium">WhatsApp disponible 24/7 para pedidos</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                       target="_blank"
+                       class="btn-primary inline-flex items-center gap-3 bg-borgona text-white px-8 py-4 rounded-full text-sm font-semibold tracking-wide mt-12">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        Escribinos y pedí ahora
+                    </a>
+                </div>
+                
+                <div class="fade-up relative" style="transition-delay: 0.2s;">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-marfil relative">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3543.0967626694955!2d-55.89996232555582!3d-27.372693312578082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457be49f1711459%3A0x2d99b3e8573888d7!2sAyacucho%202447%2C%20N3301FWJ%20Posadas%2C%20Misiones!5e0!3m2!1ses-419!2sar!4v1778104772381!5m2!1ses-419!2sar" width="100%" height="100%" style="border:0; filter: grayscale(20%) contrast(1.1);" 
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="absolute inset-0"></iframe>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 w-full h-full border border-rosa-viejo/20 rounded-2xl -z-10"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-texto text-white py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid md:grid-cols-3 gap-12 lg:gap-16 mb-16">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-full bg-borgona flex items-center justify-center">
+                            <i data-lucide="flower-2" class="w-5 h-5 text-white"></i>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-serif text-2xl font-semibold tracking-wide">Flower</span>
+                            <span class="text-[10px] uppercase tracking-[0.3em] text-white/50 -mt-1">Florería</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60 font-light leading-relaxed mb-6">
+                        Más de 40 años de elegancia floral en Posadas. Tradición, distinción y atención personalizada.
+                    </p>
+                    <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+                       target="_blank"
+                       class="inline-flex items-center gap-2 bg-borgona text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all">
+                        <i data-lucide="message-circle" class="w-4 h-4"></i>
+                        Pedir Ahora
+                    </a>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Navegación</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#historia" class="text-white/60 hover:text-white transition-colors text-sm">Historia</a></li>
+                        <li><a href="#servicios" class="text-white/60 hover:text-white transition-colors text-sm">Servicios y Precios</a></li>
+                        <li><a href="#galeria" class="text-white/60 hover:text-white transition-colors text-sm">Galería</a></li>
+                        <li><a href="#testimonios" class="text-white/60 hover:text-white transition-colors text-sm">Opiniones</a></li>
+                        <li><a href="#contacto" class="text-white/60 hover:text-white transition-colors text-sm">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif text-lg mb-6">Contacto Directo</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-white/60 text-sm">
+                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+                            Ayacucho 2447, Posadas
+                        </li>
+                        <li>
+                            <a href="https://wa.me/5493764930014" target="_blank" class="flex items-center gap-3 text-white hover:text-verde-salvia transition-colors text-sm font-medium">
+                                <i data-lucide="phone" class="w-4 h-4"></i>
+                                +54 9 376 493-0014
+                            </a>
+                        </li>
+                        <li class="flex items-center gap-3 text-white/60 text-sm">
+                            <i data-lucide="clock" class="w-4 h-4"></i>
+                            Lun-Sáb: 08:00 - 20:30
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-white/40 text-sm">© 2024 Florería Flower. Todos los derechos reservados.</p>
+                <p class="text-white/40 text-sm">Posadas, Misiones, Argentina · 40+ años de trayectoria</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky Bottom CTA (Mobile) -->
+    <div id="sticky-cta" class="sticky-cta fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gris-calido p-4 lg:hidden shadow-2xl">
+        <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+           target="_blank"
+           class="flex items-center justify-center gap-3 bg-borgona text-white px-6 py-4 rounded-full text-sm font-bold tracking-wide w-full">
+            <i data-lucide="message-circle" class="w-5 h-5"></i>
+            Pedir por WhatsApp — Respondemos ya
+        </a>
+    </div>
+
+    <!-- Floating WhatsApp Button (Desktop) -->
+    <a href="https://wa.me/5493764930014?text=Hola,%20quisiera%20hacer%20un%20pedido%20de%20flores.%20¿Podrían%20asesorarme?" 
+       target="_blank"
+       class="whatsapp-pulse fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 group hidden lg:flex">
+        <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        <span class="absolute right-full mr-4 bg-white text-texto text-sm px-4 py-2 rounded-full shadow-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none font-medium">
+            ¿Consultanos?
+        </span>
+    </a>
+
+    <script>
+        lucide.createIcons();
+        
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    const lines = entry.target.querySelectorAll('.elegant-line');
+                    lines.forEach(line => line.classList.add('expanded'));
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.fade-up, .fade-in').forEach(el => observer.observe(el));
+        
+        // Count up animation
+        const countObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    const duration = 2000;
+                    const step = target / (duration / 16);
+                    let current = 0;
+                    
+                    const timer = setInterval(() => {
+                        current += step;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        if (target >= 1000) {
+                            el.textContent = Math.floor(current).toLocaleString() + (target === 15000 ? '+' : '');
+                        } else {
+                            el.textContent = Math.floor(current) + (target === 98 ? '%' : '+');
+                        }
+                    }, 16);
+                    
+                    countObserver.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        document.querySelectorAll('.count-up').forEach(el => countObserver.observe(el));
+        
+        // Navbar scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('bg-white/90', 'nav-blur', 'shadow-sm');
+            } else {
+                navbar.classList.remove('bg-white/90', 'nav-blur', 'shadow-sm');
+            }
+        });
+        
+        // Mobile menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
+        
+        // Sticky CTA for mobile
+        const stickyCta = document.getElementById('sticky-cta');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 600) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        });
+        
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
