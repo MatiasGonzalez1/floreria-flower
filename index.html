@@ -53,11 +53,7 @@
         }
         .fade-in.visible { opacity: 1; }
         
-        .hero-image { animation: subtleZoom 20s ease-in-out infinite alternate; }
-        @keyframes subtleZoom {
-            0% { transform: scale(1); }
-            100% { transform: scale(1.05); }
-        }
+        
         
         .masonry-grid { column-count: 3; column-gap: 1rem; }
         @media (max-width: 1024px) { .masonry-grid { column-count: 2; } }
@@ -136,6 +132,13 @@
         .count-up {
             font-variant-numeric: tabular-nums;
         }
+        
+        /* Asegurar que servicios sean 3 columnas en desktop */
+        @media (min-width: 1024px) {
+            .grid.grid-cols-1.sm\:grid-cols-2.lg\:grid-cols-3 {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-texto bg-white antialiased selection:bg-rosa-viejo selection:text-white">
@@ -211,7 +214,7 @@
     <section class="relative min-h-screen flex items-center overflow-hidden bg-marfil pt-16">
         <div class="absolute inset-0 lg:left-[45%]">
             <div class="relative w-full h-full">
-                <img src="https://images.unsplash.com/photo-1563241527-3004b7be0ee9?w=1200&q=80" 
+                <img src="https://imgs.search.brave.com/b-wAe7sO_Pj8W19yHf5gZhw0FxglnrDnbi75ikN7Jf8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9wb25j/aHljYXByaWNvLmNv/bS9jZG4vc2hvcC9w/cm9kdWN0cy9BcnJl/Z2xvZmxvcmFsZGVS/b3Nhc01peF9BbHN0/cm9tZWxpYVJvc2F5/RXNwdW1hLUdJMDE3/LV8yLnBuZz92PTE3/NjA2NjA3OTkmd2lk/dGg9NDAw" 
                      alt="Arreglo floral elegante premium" 
                      class="hero-image w-full h-full object-cover opacity-90">
                 <div class="absolute inset-0 bg-gradient-to-r from-marfil via-marfil/80 to-transparent lg:from-marfil lg:via-marfil/60 lg:to-transparent"></div>
@@ -362,7 +365,7 @@
                 </p>
             </div>
             
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="service-card fade-up bg-white rounded-2xl p-8 lg:p-10 relative overflow-hidden" style="transition-delay: 0.1s;">
                     <div class="absolute top-6 right-6 price-tag text-white text-xs font-bold px-3 py-1 rounded-full">DESDE $15.000</div>
                     <div class="w-14 h-14 rounded-full bg-rosa-viejo/10 flex items-center justify-center mb-6">
